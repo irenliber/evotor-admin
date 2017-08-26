@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :stores
+    resources :products
   end
 
   get '*path', to: 'homes#index'
