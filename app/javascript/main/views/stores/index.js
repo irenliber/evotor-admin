@@ -46,15 +46,23 @@ export default class StoresIndexComponent extends Component {
               <th>№</th>
               <th>Название</th>
               <th>Адрес</th>
+              <th> </th>
             </tr>
           </thead>
           <tbody>
             {this.state.stores.map(( (store, index) => {
               return(
-                <tr>
+                <tr key={index}>
                   <td>{store.index}</td>
                   <td>{store.name}</td>
                   <td>{store.address}</td>
+                  <td>
+                    <button type="button" className="pt-button pt-intent-success">
+                      Перейти к товарам
+                      <span className="pt-icon-standard pt-icon-arrow-right pt-align-right"></span>
+                    </button>
+
+                  </td>
                 </tr>
               )
             }))}

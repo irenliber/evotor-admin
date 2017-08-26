@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'homes#index'
-  resources :stores
+
+  namespace :api do
+    resources :stores
+  end
 
   get '*path', to: 'homes#index'
 

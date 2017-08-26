@@ -14,7 +14,7 @@ ReactDOM.render(
 <Router>
   <div className="container">
     <Switch>
-      <Route exact path="/" component={Stores}/>
+      <Route exact path="/stores" component={Stores}/>
     </Switch>
   </div>
 </Router>,
