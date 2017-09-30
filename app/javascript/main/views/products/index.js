@@ -1,12 +1,7 @@
 import React, {Component} from 'react'
 import { fetchStores } from './../api'
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
-export default class StoresIndexComponent extends Component {
+export default class ProductsIndexComponent extends Component {
 
   constructor(props) {
     super(props)
@@ -50,8 +45,8 @@ export default class StoresIndexComponent extends Component {
             <tr>
               <th>№</th>
               <th>Название</th>
-              <th>Адрес</th>
-              <th> </th>
+              <th>шмадрес</th>
+              <th>{this.props.match.params.store_id}</th>
             </tr>
           </thead>
           <tbody>
@@ -62,12 +57,10 @@ export default class StoresIndexComponent extends Component {
                   <td>{store.name}</td>
                   <td>{store.address}</td>
                   <td>
-                    <Link to={`/stores/${store.uuid}/products`} >
-                      <button type="button" className="pt-button pt-intent-success">
-                        Перейти к товарам
-                        <span className="pt-icon-standard pt-icon-arrow-right pt-align-right"></span>
-                      </button>
-                    </Link>
+                    <button type="button" className="pt-button pt-intent-success">
+                      Перейти к товарам
+                      <span className="pt-icon-standard pt-icon-arrow-right pt-align-right"></span>
+                    </button>
 
                   </td>
                 </tr>
